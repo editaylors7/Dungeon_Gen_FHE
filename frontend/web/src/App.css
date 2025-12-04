@@ -1,0 +1,768 @@
+/* App.css */
+:root {
+  --primary-color: #ff0000;
+  --secondary-color: #000000;
+  --accent-color: #ffffff;
+  --text-color: #ffffff;
+  --bg-color: #000000;
+  --card-bg: #1a1a1a;
+  --success-color: #00ff00;
+  --warning-color: #ffff00;
+  --error-color: #ff0000;
+  --border-color: #ff0000;
+}
+
+body {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  image-rendering: pixelated;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  border-bottom: 4px solid var(--primary-color);
+}
+
+.logo h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: var(--primary-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.logo h2 {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--accent-color);
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.welcome-banner {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 4px solid var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcome-text h2 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.welcome-text p {
+  margin: 0.5rem 0 0;
+  color: var(--accent-color);
+}
+
+.fhe-badge {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border: 2px solid var(--accent-color);
+}
+
+.tab-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.pixel-tab {
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  border: 2px solid var(--primary-color);
+  border-bottom: none;
+}
+
+.pixel-tab.active {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.dungeons-section {
+  margin-top: 1rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dungeons-list {
+  min-height: 300px;
+}
+
+.dungeon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.dungeon-card {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.dungeon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 0 var(--primary-color);
+}
+
+.dungeon-name {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.dungeon-status {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.dungeon-status span {
+  color: var(--secondary-color);
+}
+
+.dungeon-status.ready {
+  background-color: var(--success-color);
+}
+
+.dungeon-status.generating {
+  background-color: var(--warning-color);
+}
+
+.dungeon-status.completed {
+  background-color: var(--primary-color);
+}
+
+.dungeon-date, .dungeon-owner {
+  font-size: 0.8rem;
+  color: var(--accent-color);
+}
+
+.explore-btn {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.no-dungeons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stat-item {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border: 2px solid var(--primary-color);
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--accent-color);
+}
+
+.stats-chart {
+  display: flex;
+  height: 200px;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.chart-bar {
+  flex: 1;
+  background-color: var(--primary-color);
+  position: relative;
+  transition: height 1s;
+}
+
+.chart-bar span {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.about-section {
+  padding: 1rem;
+  background-color: var(--card-bg);
+  border: 2px solid var(--primary-color);
+}
+
+.about-content p {
+  margin-bottom: 1rem;
+}
+
+.fhe-explanation, .features-list {
+  margin-top: 1rem;
+}
+
+.fhe-explanation ol, .features-list ul {
+  padding-left: 1.5rem;
+}
+
+.fhe-explanation li, .features-list li {
+  margin-bottom: 0.5rem;
+}
+
+.app-footer {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  border-top: 4px solid var(--primary-color);
+  margin-top: 2rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand .logo {
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-link {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.create-modal, .dungeon-detail-modal {
+  background-color: var(--card-bg);
+  border: 4px solid var(--primary-color);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+.modal-body {
+  padding: 1rem;
+}
+
+.fhe-notice {
+  display: flex;
+  gap: 1rem;
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid var(--primary-color);
+}
+
+.fhe-notice strong {
+  color: var(--primary-color);
+}
+
+.fhe-notice p {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.pixel-input {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--secondary-color);
+  border: 2px solid var(--primary-color);
+  color: var(--accent-color);
+  font-family: 'Courier New', monospace;
+}
+
+.attributes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.encryption-preview {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.encryption-preview h4 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.preview-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.plain-data, .encrypted-data {
+  flex: 1;
+  padding: 0.5rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+.plain-data span, .encrypted-data span {
+  font-size: 0.8rem;
+  color: var(--primary-color);
+}
+
+.plain-data div, .encrypted-data div {
+  word-break: break-all;
+  font-size: 0.9rem;
+}
+
+.encryption-arrow {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-top: 2px solid var(--primary-color);
+  gap: 1rem;
+}
+
+.pixel-button {
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.5rem 1rem;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pixel-button:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.pixel-button.primary {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.pixel-button.primary:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.pixel-button.cancel {
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+}
+
+.pixel-button.cancel:hover {
+  background-color: #333;
+}
+
+.pixel-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dungeon-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-item span {
+  color: var(--primary-color);
+}
+
+.info-item strong {
+  color: var(--accent-color);
+}
+
+.encrypted-data-section {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.encrypted-data-section h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.encrypted-data {
+  word-break: break-all;
+  background-color: var(--card-bg);
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid var(--border-color);
+}
+
+.decrypt-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.decrypted-data-section {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.attributes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.attribute-item {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+.attribute-item span {
+  display: block;
+  color: var(--primary-color);
+  font-size: 0.8rem;
+}
+
+.attribute-item div {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.dungeon-map-section {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.dungeon-map {
+  margin-top: 0.5rem;
+}
+
+.dungeon-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.dungeon-room {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.25rem;
+  border: 2px solid var(--primary-color);
+  font-weight: bold;
+}
+
+.dungeon-room.empty {
+  background-color: var(--card-bg);
+  color: var(--accent-color);
+}
+
+.dungeon-room.monster {
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+.dungeon-room.treasure {
+  background-color: #ffff00;
+  color: #000000;
+}
+
+.dungeon-room.boss {
+  background-color: #ff00ff;
+  color: #ffffff;
+}
+
+.dungeon-room.trap {
+  background-color: #00ffff;
+  color: #000000;
+}
+
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.map-legend div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.transaction-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.transaction-content {
+  padding: 2rem;
+  text-align: center;
+  border: 4px solid var(--primary-color);
+}
+
+.transaction-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.transaction-icon.success {
+  color: var(--success-color);
+}
+
+.transaction-icon.error {
+  color: var(--error-color);
+}
+
+.transaction-message {
+  font-size: 1.2rem;
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  z-index: 1000;
+}
+
+.pixel-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--primary-color);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.tutorial-section {
+  padding: 1rem;
+  background-color: var(--card-bg);
+  border: 2px solid var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.tutorial-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.tutorial-step {
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.step-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-content h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.step-details {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--accent-color);
+}
+
+.wallet-connect-wrapper {
+  margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+  .attributes-grid, .dungeon-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dungeon-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .footer-links {
+    justify-content: center;
+  }
+}
